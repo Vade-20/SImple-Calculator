@@ -5,7 +5,7 @@ root.title("Calculator")
 e = Entry(root, fg='red', width=45, bg='black', font=('Times','30'), borderwidth=25, justify=RIGHT, )
 e.grid(row=0, column=0, columnspan=4)
 root.config(bg = 'black')
-root.iconbitmap("C:\\Users\\VEDANT SAXENA\\Dropbox\\My PC (LAPTOP-QJ4EJ2DM)\\Pictures\\icons\\system_application_calculator_13032.ico")
+root.iconbitmap("Simple-Calculator\\system_application_calculator_13032.ico")
 
 
 def check(keys):
