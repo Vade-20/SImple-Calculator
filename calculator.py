@@ -5,11 +5,10 @@ root.title("Calculator")
 e = Entry(root, fg='red', width=45, bg='black', font=('Times','30'), borderwidth=25, justify=RIGHT, )
 e.grid(row=0, column=0, columnspan=4)
 root.config(bg = 'black')
-root.iconbitmap("Simple-Calculator\\system_application_calculator_13032.ico")
 
 
-def check(keys):
-    print(keys.char)
+
+def check(keys): #check where the entered value in the entery box is a valid input if not it prevent the invalid input to be entered
     if str(keys.char).isdigit():
         number(keys.char)
     elif keys.char in ['+','-','/','*','(',')','[',']','.'] :
@@ -23,7 +22,7 @@ def check(keys):
         pass
 
 
-def number(n):
+def number(n): #enter the value inside the entery box
     a = e.get()
     a1 = len(a) - 1
     a = a + str(n)
@@ -31,21 +30,21 @@ def number(n):
     e.insert(a1, a)
 
 
-def clear():
+def clear(): #empty the entry box
     e.delete(0, END)
 
 
-def back():
+def back(): #delete the last character from entery box 
     a = e.get()
     a1 = len(a)-1
     e.delete(a1, END)
 
-def back1(pp):
+def back1(pp): #delete the last character from entery box but use for keyboard key <backspace>
     a = e.get()
     a1 = len(a)-1
     e.delete(a1, END)
 
-def equal():
+def equal(): #Give us the output
     try:
         a = e.get()
         a = eval(a)
@@ -59,7 +58,7 @@ def equal():
         from tkinter import messagebox
         messagebox.showerror('Error', 'Non-numerical value added in calculator')
 
-def equal1(pp):
+def equal1(pp): #Give us the output but uses the keyboard key <Return> ie enter
     try:
         a = e.get()
         a = eval(a)
@@ -73,7 +72,7 @@ def equal1(pp):
         from tkinter import messagebox
         messagebox.showerror('Error', 'Non-numerical value added in calculator')
 
-def change():
+def change(): #changes the integer into positive or negative
     a = e.get()
     a = list(a)
     b = ['-']
