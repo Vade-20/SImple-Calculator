@@ -34,17 +34,12 @@ def clear(): #empty the entry box
     e.delete(0, END)
 
 
-def back(): #delete the last character from entery box 
+def back(n=None): #delete the last character from entery box 
     a = e.get()
     a1 = len(a)-1
     e.delete(a1, END)
 
-def back1(pp): #delete the last character from entery box but use for keyboard key <backspace>
-    a = e.get()
-    a1 = len(a)-1
-    e.delete(a1, END)
-
-def equal(): #Give us the output
+def equal(n=None): #Give us the output
     try:
         a = e.get()
         a = eval(a)
@@ -58,19 +53,6 @@ def equal(): #Give us the output
         from tkinter import messagebox
         messagebox.showerror('Error', 'Non-numerical value added in calculator')
 
-def equal1(pp): #Give us the output but uses the keyboard key <Return> ie enter
-    try:
-        a = e.get()
-        a = eval(a)
-        a = round(a, 2)
-        clear()
-        e.insert(0, a)
-    except SyntaxError:
-        from tkinter import messagebox
-        messagebox.showerror('Error', 'Syntax Error')
-    except NameError:
-        from tkinter import messagebox
-        messagebox.showerror('Error', 'Non-numerical value added in calculator')
 
 def change(): #changes the integer into positive or negative
     a = e.get()
@@ -90,8 +72,8 @@ def change(): #changes the integer into positive or negative
 
 
 root.bind('<Key>',check)
-root.bind('<Return>',equal1)
-root.bind('<BackSpace>',back1)
+root.bind('<Return>',equal)
+root.bind('<BackSpace>',back)
 root.bind('<Shift>')
 
 Button(root, fg='red', bg='black', font=('Times', '20'), width=10, borderwidth=20, justify=RIGHT, command=clear,
