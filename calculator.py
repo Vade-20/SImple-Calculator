@@ -5,7 +5,7 @@ root.title("Calculator")
 e = Entry(root, fg='red', width=45, bg='black', font=('Times','30'), borderwidth=25, justify=RIGHT, )
 e.grid(row=0, column=0, columnspan=4)
 root.config(bg = 'black')
-root.iconbitmap('Simple-Calculator\system_application_calculator_13032.ico')
+root.iconbitmap('system_application_calculator_13032.ico')
 
 def check(keys): #check where the entered value in the entery box is a valid input if not it prevent the invalid input to be entered
     if str(keys.char).isdigit():
