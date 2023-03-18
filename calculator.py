@@ -29,7 +29,7 @@ def number(n): #enter the value inside the entery box
     e.insert(a1, a)
 
 
-def clear(): #empty the entry box
+def clear(n=None): #empty the entry box
     e.delete(0, END)
 
 
@@ -74,6 +74,7 @@ root.bind('<Key>',check)
 root.bind('<Return>',equal)
 root.bind('<BackSpace>',back)
 root.bind('<Shift>')
+root.bind('<Escape>',clear)
 
 Button(root, fg='red', bg='black', font=('Times', '20'), width=10, borderwidth=20, justify=RIGHT, command=clear,
        text='Clear').grid(row=1, column=0,sticky=W+E)
