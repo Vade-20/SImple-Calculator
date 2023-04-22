@@ -5,6 +5,7 @@ root.title("Calculator")
 e = Entry(root, fg='red', width=45, bg='black', font=('Times','30'), borderwidth=25, justify=RIGHT, )
 e.grid(row=0, column=0, columnspan=4)
 root.config(bg = 'black')
+root.resizable(height=False,width=False)
 
 try:
     root.iconbitmap(r'Simple-Calculator\calculator.ico')
